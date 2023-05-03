@@ -7,6 +7,9 @@
 # Inherit from sm8250-common
 include device/xiaomi/sm8250-common/BoardConfigCommon.mk
 
+# Inherit from proprietary files for miuicamera
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
 DEVICE_PATH := device/xiaomi/munch
 
 BUILD_BROKEN_DUP_RULES := true
@@ -15,7 +18,7 @@ BUILD_BROKEN_DUP_RULES := true
 TARGET_SCREEN_DENSITY := 440
 
 # Kernel
-TARGET_KERNEL_CONFIG := vendor/munch_defconfig
+TARGET_KERNEL_CONFIG := munch_defconfig
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_munch
